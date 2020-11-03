@@ -2,12 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {useState} from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
-import { Entypo } from '@expo/vector-icons'; 
 
 
 
 export default function App() {
-  const buttons = ['CLEAR', 'DEL', '%',
+  const buttons = ['CLEAR', 'DEL', '*',
    1, 2, 3,
    4, 5, 6,
    7, 8, 9,
@@ -29,13 +28,13 @@ export default function App() {
         setPrimeiroNumero((PrimeiroNumero + UltimoNumero).toString())
         return
       case '-': 
-      setPrimeiroNumero((primeiroNumero - UltimoNumero).toString())
+      setPrimeiroNumero((PrimeiroNumero - UltimoNumero).toString())
         return
       case '*':
         setPrimeiroNumero((PrimeiroNumero * UltimoNumero).toString())
         return
       case '/': 
-        ssetPrimeiroNumero((PrimeiroNumero / UltimoNumero).toString())
+        setPrimeiroNumero((PrimeiroNumero / UltimoNumero).toString())
         return
     }
   }
@@ -67,7 +66,7 @@ export default function App() {
 
   const styles = StyleSheet.create({
     results: {
-      backgroundColor: "#f5f5f5",
+      backgroundColor: "#6495ED",
       width: '100%',
       minHeight: 280,
       alignItems: 'flex-end',
@@ -89,7 +88,7 @@ export default function App() {
       alignSelf: 'flex-start',
       bottom: 120,
       margin: 10,
-      backgroundColor: "#e5e5e5",
+      backgroundColor: "#6495ED",
       alignItems: 'center',
       justifyContent: 'center',
       width: 50,
@@ -102,7 +101,7 @@ export default function App() {
       flexWrap: 'wrap',
     },
     button: {
-      borderColor: "#fafafafa",
+      borderColor: "#6495ED",
       borderWidth: 1,
       alignItems: 'center',
       justifyContent: 'center',
@@ -127,7 +126,7 @@ export default function App() {
       <View style={styles.buttons}>
         {buttons.map((button) => 
           button === '=' ?
-        <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#fafafafa'}]}>
+        <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#FFFFFF'}]}>
           <Text style={[styles.textButton, {color: "black", fontSize: 30}]}>{button}</Text>
         </TouchableOpacity>
           :
